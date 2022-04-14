@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///Users/darrellwhite/LINZ%20App/sites/prepare-transfer-li.html -->
+<html class="no-js" lang="">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title></title>
+    <link href="./prepare-transfer_files/icon" rel="stylesheet" />
+    <link rel="stylesheet" href="./prepare-transfer_files/lui.css" />
+    <link rel="stylesheet" href="./prepare-transfer_files/transfer-page.css" />
+  </head>
+
+  <body>
+    <div class="page-grid">
+      <header>
+        <div class="grid-cell back-btn">
+          <span class="material-icons"> arrow_back </span>
+        </div>
+        <div class="grid-cell">
+          <h1><span>Prepare </span>Discharge of Mortgage 20200452.1</h1>
+        </div>
+        <div class="grid-cell header-client-ref">
+          <p>
+            <span>Client ref 1</span> <br />
+            DN-345632-The Green Family Trust
+          </p>
+        </div>
+      </header>
+      <div class="lui-msg-banner-container lui-msg-banner-container">
+        <div class="lui-msg-info lui-msg-dynamic-banner">
+          <i class="lui-msg-status-icon material-icons">info</i>
+          <h2>For all disabled features please visit Legacy Landonline.</h2>
+          <button aria-label="Close dialog">
+            <i class="material-icons">close</i>
+          </button>
+        </div>
+      </div>
+      <div
+        class="app-cotent two-col-adjustable-grid"
+        id="page"
+        onmouseup="EndDrag()"
+        onmousemove="OnDrag(event)"
+        style="grid-template-columns: 986px 8px 1fr"
+      >
+        <section
+          id="leftcolumn"
+          class="prepare-form-section sm-breakpoint md-breakpoint"
+        >
+          <div class="form-grid" id="form-grid-wrapper">
+            <h2 class="grid-cell-fullwidth">Mortgage details</h2>
+            <label class="grid-cell-fullwidth">Affected titles</label>
+            <div class="affected-titles-list grid-cell-fullwidth">
+              <ul role="list">
+                <li>
+                  <a
+                    title="View Title summary in new window"
+                    href="https://lrs.linz.govt.nz/search/titles/107941?fromMultiResults=true"
+                    target="_blank"
+                    >1234</a
+                  >
+                </li>
+                <li>
+                  <a
+                    title="View Title summary in new window"
+                    href="https://lrs.linz.govt.nz/search/titles/14843?fromMultiResults=true"
+                    target="_blank"
+                    >WN23/456</a
+                  >
+                </li>
+                <li>
+                  <a
+                    title="View Title summary in new window"
+                    href="https://lrs.linz.govt.nz/search/titles/16451?fromMultiResults=true"
+                    target="_blank"
+                    >2345</a
+                  >
+                </li>
+                <li>
+                  <a
+                    title="View Title summary in new window"
+                    href="https://lrs.linz.govt.nz/search/titles/107941?fromMultiResults=true"
+                    target="_blank"
+                    >6544</a
+                  >
+                </li>
+                <li>
+                  <a
+                    title="View Title summary in new window"
+                    href="https://lrs.linz.govt.nz/search/titles/16452?fromMultiResults=true"
+                    target="_blank"
+                    >BN3232-4</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="grid-cell-fullwidth">
+              <label class="grid-cell-fullwidth">Transfer of</label>
+            </div>
+            <div
+              id="transfer-of-radio-group"
+              class="grid-cell-fullwidth radio-button-group"
+            >
+              <div class="grid-cell-1">
+                <!-- Keep input and label together so styling works  -->
+                <input type="radio" id="all" name="transfer-of" value="All" />
+                <label class="" for="all">All</label>
+              </div>
+              <div class="grid-cell-2">
+                <input
+                  type="radio"
+                  id="Share-Interest"
+                  name="transfer-of"
+                  value="Share-Interest"
+                />
+                <label class="" for="Share-Interest">Share/Interest</label>
+              </div>
+              <div class="grid-cell-3">
+                <input
+                  type="radio"
+                  id="Part-of-land-complex"
+                  name="transfer-of"
+                  value="Part of land-complex"
+                />
+                <label class="" for="Part-of-land-complex"
+                  >Part of land/complex</label
+                >
+              </div>
+              <div class="grid-cell-4">
+                <input
+                  type="radio"
+                  id="Lease-Mortgage-Other"
+                  name="transfer-of"
+                  value="Lease/Mortgage/Other"
+                />
+                <label class="" for="Lease-Mortgage-Other"
+                  >Lease/Mortgage/Other</label
+                >
+              </div>
+            </div>
+            <div class="grid-cell-fullwidth">
+              <h2>Transferors</h2>
+            </div>
+            <!-- ----------- Transferors table start --------------------- -->
+            <div id="transferors-table" class="grid-cell-fullwidth">
+              <div class="header-row">
+                <div class="grid-cell grid-cell-first header-cell">
+                  <h6>
+                    Given name(s) or
+                    <span class="label-full-length">Corporate</span
+                    ><span class="label-shortened">Corp.</span> name
+                  </h6>
+                </div>
+                <div class="grid-cell header-cell">
+                  <h6>Family name</h6>
+                </div>
+                <div class="grid-cell header-cell">
+                  <h6>Alias</h6>
+                </div>
+              </div>
+              <ul role="list" class="transferors-content">
+                <!-- ------- ROW -----------  -->
+                <li class="transferors-row">
+                  <div class="grid-cell grid-cell-first">
+                    <h6>Given name(s)</h6>
+                    <p>Tableu</p>
+                  </div>
+                  <div class="grid-cell">
+                    <h6>Family name</h6>
+                    <p>Hue</p>
+                  </div>
+                  <div class="grid-cell">
+                    <h6>Alias</h6>
+                    –
+                  </div>
+                </li>
+                <!-- ------- ROW -----------  -->
+                <li class="transferors-row">
+                  <div class="grid-cell grid-cell-first">
+                    <h6>Given name(s)</h6>
+                    <p>Ima</p>
+                  </div>
+                  <div class="grid-cell">
+                    <h6>Family name</h6>
+                    <p>Persona</p>
+                  </div>
+                  <div class="grid-cell">
+                    <h6>Jnr, Reggie, Bozo</h6>
+                    –
+                  </div>
+                </li>
+                <!-- ------- ROW -----------  -->
+              </ul>
+              <div class="transferors-row transferors-row-corporate-listing">
+                <div class="grid-cell grid-cell-first">
+                  <h6>Corporate name</h6>
+                  <p>Super Corporate LTD</p>
+                </div>
+                <div class="grid-cell grid-cell-corporate-check">
+                  <div class="lui-checkbox-container FormDemo-checkbox">
+                    <input
+                      class=""
+                      id="anyCheckboxId1"
+                      type="checkbox"
+                      name="providerChoice1"
+                      value="provider1"
+                    />
+                    <label class="" for="anyCheckboxId1">
+                      Public corporate
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-cell-fullwidth">
+              <h2>Transferees</h2>
+            </div>
+            <div
+              id="transferee-radio-group"
+              class="grid-cell-fullwidth radio-button-group"
+            >
+              <div class="grid-cell-1">
+                <!-- Keep input and label together so styling works  -->
+                <input
+                  type="radio"
+                  id="sole-or-joint"
+                  name="transferee"
+                  value="sole-or-joint"
+                />
+                <label class="" for="sole-or-joint"
+                  >Sole or Joint Tenants</label
+                >
+              </div>
+              <div class="grid-cell-2">
+                <input
+                  type="radio"
+                  id="tennant-in-common"
+                  name="transferee"
+                  value="tennant-in-common"
+                />
+                <label class="" for="tennant-in-common"
+                  >Tenants in Common</label
+                >
+              </div>
+              <div class="grid-cell-3">
+                <input
+                  type="radio"
+                  id="combination"
+                  name="transferee"
+                  value="Combination"
+                />
+                <label class="" for="combination">Combination</label>
+              </div>
+            </div>
+            <!-- ----------- Transferees table start --------------------- -->
+            <div class="transferees-wrapper grid-cell-fullwidth">
+              <div class="transferees-grid">
+                <div class="header-row">
+                  <div class="grid-cell header-cell">&nbsp;</div>
+                  <div class="grid-cell grid-cell-first header-cell">
+                    <h6>
+                      Given name(s) or
+                      <span class="label-full-length">Corporate</span
+                      ><span class="label-shortened">Corp.</span> name
+                    </h6>
+                  </div>
+                  <div class="grid-cell header-cell">
+                    <h6>Family name</h6>
+                  </div>
+                  <div class="grid-cell header-cell">
+                    <h6>Alias</h6>
+                  </div>
+                  <div class="grid-cell header-cell">
+                    <h6>Share</h6>
+                    <button class="lui-button lui-button-icon-only">
+                      <span title="Add a group" class="material-icons helpIcon"
+                        >info</span
+                      >
+                    </button>
+                  </div>
+                  <div class="grid-cell header-cell">&nbsp;</div>
+                </div>
+                <!-- ------- ROW -----------  -->
+                <ul role="list" class="transferees-content">
+                  <li class="transferees-row">
+                    <div class="grid-cell icon-drag">
+                      <span
+                        title="Drag this row up or down to reorder the list"
+                        class="material-icons"
+                      >
+                        drag_indicator
+                      </span>
+                    </div>
+                    <div class="grid-cell grid-cell-first">
+                      <label>Given name(s)</label>
+                      <input class="" type="text" />
+                    </div>
+                    <div class="grid-cell">
+                      <label>Family name</label>
+                      <input class="" type="text" />
+                    </div>
+                    <div class="grid-cell">
+                      <label>Alias</label>
+                      <input class="" type="text" />
+                    </div>
+                    <div class="grid-cell">
+                      <label>Share</label>
+                      <input class="" type="text" />
+                    </div>
+                    <div class="grid-cell">
+                      <span class="material-icons"> more_vert </span>
+                    </div>
+                  </li>
+                  <!-- ------- ROW -----------  -->
+                  <li class="transferees-row mortgageGroup--wrapper">
+                    <!-- creaate a full widht container -->
+                    <div class="grid-cell-fullwidth mortgageGroup">
+                      <h5 class="mortgageGroup--header">
+                        <span
+                          title="Drag this group up or down to reorder the list"
+                          class="material-icons groupIconDrag"
+                        >
+                          drag_indicator </span
+                        >Joint Mortgage group
+                      </h5>
+                      <div class="transferees-grid">
+                        <ul role="list" class="transferees-content">
+                          <li class="transferees-row">
+                            <div class="grid-cell icon-drag">
+                              <span
+                                title="Drag this row up or down to reorder the list"
+                                class="material-icons"
+                              >
+                                drag_indicator
+                              </span>
+                            </div>
+                            <div class="grid-cell grid-cell-first">
+                              <label>Given name(s)</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <label>Family name</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <label>Alias</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <label>Share</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <span class="material-icons"> more_vert </span>
+                            </div>
+                          </li>
+                          <li class="transferees-row">
+                            <div class="grid-cell icon-drag">
+                              <span
+                                title="Drag this row up or down to reorder the list"
+                                class="material-icons"
+                              >
+                                drag_indicator
+                              </span>
+                            </div>
+                            <div class="grid-cell grid-cell-first">
+                              <label>Given name(s)</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <label>Family name</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <label>Alias</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell"></div>
+                            <div class="grid-cell">
+                              <span class="material-icons"> more_vert </span>
+                            </div>
+                          </li>
+                          <li class="transferees-row">
+                            <div class="grid-cell icon-drag">
+                              <span
+                                title="Drag this row up or down to reorder the list"
+                                class="material-icons"
+                              >
+                                drag_indicator
+                              </span>
+                            </div>
+                            <div class="grid-cell grid-cell-first">
+                              <label>Given name(s)</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <label>Family name</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <label>Alias</label>
+                              <input class="" type="text" />
+                            </div>
+                            <div class="grid-cell">
+                              <a
+                                href="file:///Users/darrellwhite/LINZ%20App/sites/prepare-transfer-li.html#"
+                                >+ Add row</a
+                              >
+                            </div>
+                            <div class="grid-cell">
+                              <span class="material-icons"> more_vert </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ------- ROW -----------  -->
+                  <li class="transferees-row">
+                    <div class="grid-cell icon-drag">
+                      <span
+                        title="Drag this row up or down to reorder the list"
+                        class="material-icons"
+                      >
+                        drag_indicator
+                      </span>
+                    </div>
+                    <div
+                      class="grid-cell grid-cell-first transferees-row-corporateName"
+                    >
+                      <label>Given name(s)</label>
+                      <input class="" type="text" />
+                    </div>
+                    <div class="grid-cell transferees-row-corporateCheck">
+                      <div class="lui-checkbox-container FormDemo-checkbox">
+                        <input
+                          class=""
+                          id="anyCheckboxId1"
+                          type="checkbox"
+                          name="providerChoice1"
+                          value="provider1"
+                        />
+                        <label class="" for="anyCheckboxId1"
+                          >Public
+                          <span class="label-full-length">corporate</span
+                          ><span class="label-shortened">corp.</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="grid-cell">
+                      <label>Share</label>
+                      <input class="" type="text" />
+                    </div>
+                    <div class="grid-cell">
+                      <span class="material-icons"> more_vert </span>
+                    </div>
+                  </li>
+                  <!-- ---------------- End all rows -----------------  -->
+                </ul>
+              </div>
+              <div class="grid-cell-fullwidth add-transferees-row">
+                <!-- <a href="#">+ Add private individual</a>
+						<a href="#">+ Add Corportate</a> -->
+                <button class="lui-button lui-button-icon-only">
+                  <span title="Add a group" class="material-icons helpIcon"
+                    >info</span
+                  >
+                </button>
+                <div class="buttonGroupWrapper">
+                  <button class="lui-button lui-button-icon-only">
+                    <span title="Add a group" class="material-icons"
+                      >create_new_folder</span
+                    >
+                  </button>
+
+                  <button class="lui-button lui-button-icon-only">
+                    <span
+                      title="Add a private individual"
+                      class="material-icons"
+                      >person_add</span
+                    >
+                  </button>
+                  <button class="lui-button lui-button-icon-only">
+                    <span title="Add a corporate" class="material-icons"
+                      >corporate_fare</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <div
+                class="grid-cell-fullwidth resulting-ownership-panel-wrapper"
+              >
+                <div class="resulting-ownership-panel">
+                  <h3>Resulting ownership</h3>
+                  <p>
+                    Franz Joseph as to a 1/3 share. Fran Joseph as to a 1/4
+                    share. Ice R Us LTD as to a 1/4 share.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div
+          class="drag-bar"
+          title="Drag to resize columns"
+          onmousedown="StartLeftDrag()"
+        >
+          <div class="material-icons">drag_handle</div>
+          <div
+            id="dragBarLabel"
+            class="preview-page-handle"
+            onclick="setAutoWidth()"
+          >
+            <p>Preview &amp; Pre-validatinos</p>
+          </div>
+        </div>
+        <section id="rightcolumn" class="preview-section">
+          <div class="preview-page">
+            <h1>Instrument type - Transfer</h1>
+            <hr />
+            <p>
+              Prow scuttle parrel provost Sail ho shrouds spirits boom
+              mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's
+              nest nipperkin grog yardarm hempen halter furl. Swab barque
+              interloper chantey doubloon starboard grog black jack gangway
+              rutters.
+            </p>
+            <p>
+              Deadlights jack lad schooner scallywag dance the hempen jig
+              carouser broadside cable strike colors. Bring a spring upon her
+              cable holystone blow the man down spanker Shiver me timbers to go
+              on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul
+              squiffy black spot yardarm spyglass sheet transom heave to.
+            </p>
+
+            <p>
+              Trysail Sail ho Corsair red ensign hulk smartly boom jib rum
+              gangway. Case shot Shiver me timbers gangplank crack Jennys tea
+              cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge
+              of the seven seas boatswain schooner gaff booty Jack Tar transom
+              spirits.
+            </p>
+
+            <p>
+              Trysail Sail ho Corsair red ensign hulk smartly boom jib rum
+              gangway. Case shot Shiver me timbers gangplank crack Jennys tea
+              cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge
+              of the seven seas boatswain schooner gaff booty Jack Tar transom
+              spirits.
+            </p>
+
+            <p>
+              Trysail Sail ho Corsair red ensign hulk smartly boom jib rum
+              gangway. Case shot Shiver me timbers gangplank crack Jennys tea
+              cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge
+              of the seven seas boatswain schooner gaff booty Jack Tar transom
+              spirits.
+            </p>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <button class="lui-button lui-button-secondary">Save</button>
+      </footer>
+    </div>
+
+    <script>
+      // ------------- The HELP! list:
+      // Lot's of if else's that need to be cleaned up/wrapped up in a function
+      // Breakpoints working nicely being added to LH column. Now need to do the same for the RH column so any content can be responsive
+      // The whole JS needs to work with the browser window resizing. See the ResetColumnSizes() function to see more notes
+      // The auto expand button is working fine, but need the opposite when you click a button, the RH col is minimised.
+      // The above button could appear after a 0.5 second delay hover on the Drag Bar, when the RH column is expanded out.
+      // Look at this on a PC. The drag bar may be messed up with scroll bars
+      // Review of styling with UX team as a component
+      // The final LUI component will be:
+      // a container with two columns and the drag bar in the middle
+      // Dynamic classes being added/removed to both main columns
+      // button for drag bar to auto expand/collapse the RH column
+      // The LH column will always be the 'master' column, with the right towing the line - therefore RH content is supportive to the LH column
+      // Inner content wrappers so we have the option of conetent scrolling-y independently
+
+      let isLeftDragging = false;
+      let isRightDragging = false;
+      let formSection = document.getElementById("leftcolumn");
+      let dragBarLabel = document.getElementById("dragBarLabel");
+
+      // align breakpoints with our scss? It's based on container size, so may not work and could be different
+      let smallBreakPoint = 481;
+      let mediumBreakPoint = 769;
+      let largeBreakPoint = 1025;
+      let extraLargeBreakPoint = 1201;
+
+      //check leftcolumn width on load
+      let leftColumnStart = document.getElementById("leftcolumn");
+      let leftColumnStartWidth = leftColumnStart.clientWidth;
+
+      //add classes to render the columns correctly at the start
+      if (leftColumnStartWidth > extraLargeBreakPoint) {
+        startUpBreakPoint("xl-breakpoint");
+      }
+      if (leftColumnStartWidth > largeBreakPoint) {
+        startUpBreakPoint("lg-breakpoint");
+      }
+      if (leftColumnStartWidth > mediumBreakPoint) {
+        startUpBreakPoint("md-breakpoint");
+      }
+      if (leftColumnStartWidth > smallBreakPoint) {
+        startUpBreakPoint("sm-breakpoint");
+      }
+
+      function startUpBreakPoint(myBreakPoint) {
+        formSection.classList.add(myBreakPoint);
+      }
+
+      // add class to the RHS column if the width goes below the min width on page load
+      let rightColumnStart = document.getElementById("rightcolumn");
+      let rightColumnStartWidth = rightColumnStart.clientWidth; 
+
+      if (rightColumnStartWidth < 576) {
+        rightColumnStart.classList.add("preview-page-overflow");
+      }
+
+      function ResetColumnSizes() {
+        // when page resizes return update col sizes
+        // On resize down, we take the space away from the right col
+        // if the size of the right col goes below X, then we start to resize the left column
+        // The left col is treated as the priority
+        // The resize is done simply with setting the resizable col with a 1fr grid col value
+        let page = document.getElementById("page");
+        let leftcolumn = document.getElementById("leftcolumn");
+        let rightcolumn = document.getElementById("rightcolumn");
+
+        let leftColumnWidth = leftcolumn.clientWidth;
+        let rightColumnWidth = rightcolumn.clientWidth;
+        let dragbarWidth = 8;
+        let newColDefn = "";
+        // if the right column has not reached it's min width, reduce the size of the right column:
+        if (rightColumnWidth <= 20) {
+          let cols = [
+            dragbarWidth,
+            page.clientWidth - dragbarWidth - leftColumnWidth,
+          ];
+
+          let tempColDefn = cols.map((c) => c.toString() + "px").join(" ");
+          newColDefn = "1fr " + tempColDefn;
+          console.log(tempColDefn);
+          console.log(newColDefn);
+        } else if (rightColumnWidth > 20) {
+          // right column is at it's min widht, so resize the left column
+          let cols = [
+            page.clientWidth - dragbarWidth - rightColumnWidth,
+            dragbarWidth,
+          ];
+
+          let tempColDefn = cols.map((c) => c.toString() + "px").join(" ");
+          newColDefn = tempColDefn + " 1fr";
+          console.log(tempColDefn);
+          console.log(newColDefn);
+        }
+
+        page.style.gridTemplateColumns = newColDefn;
+        // now set the break points
+        if (leftColumnWidth > extraLargeBreakPoint) {
+          setBreakPoint("xl-breakpoint");
+        } else if (leftColumnWidth > largeBreakPoint) {
+          setBreakPoint("lg-breakpoint");
+        } else if (leftColumnWidth > mediumBreakPoint) {
+          setBreakPoint("md-breakpoint");
+        } else if (leftColumnWidth > smallBreakPoint) {
+          setBreakPoint("sm-breakpoint");
+        } else if (leftColumnWidth < smallBreakPoint) {
+          setBreakPoint("none");
+        }
+      }
+
+      function SetCursor(cursor) {
+        let page = document.getElementById("page");
+        // page.style.cursor = cursor;
+      }
+
+      function StartLeftDrag() {
+        console.log("mouse down");
+        isLeftDragging = true;
+
+        SetCursor("ew-resize");
+      }
+
+      function StartRightDrag() {
+        console.log("mouse down");
+        isRightDragging = true;
+
+        SetCursor("ew-resize");
+      }
+
+      function EndDrag() {
+        console.log("mouse up");
+        isLeftDragging = false;
+        isRightDragging = false;
+
+        SetCursor("auto");
+      }
+
+      function setBreakPoint(myBreakPoint) {
+        //clear classes as required; as the container expands classes are added. As the container contracts, classes are removed
+        if (myBreakPoint == "lg-breakpoint") {
+          if (formSection.classList.contains("xl-breakpoint")) {
+            formSection.classList.remove("xl-breakpoint");
+          }
+        }
+        if (myBreakPoint == "md-breakpoint") {
+          if (formSection.classList.contains("lg-breakpoint")) {
+            formSection.classList.remove("lg-breakpoint");
+          }
+        }
+        if (myBreakPoint == "sm-breakpoint") {
+          if (formSection.classList.contains("md-breakpoint")) {
+            formSection.classList.remove("md-breakpoint");
+          }
+        }
+        if (myBreakPoint == "none") {
+          if (formSection.classList.contains("sm-breakpoint")) {
+            formSection.classList.remove("sm-breakpoint");
+          }
+        }
+        //At the mobile level, there is no breakpoint as this is your default state to start styling. i.e. "mobile first"
+        if (myBreakPoint != "none") {
+          formSection.classList.add(myBreakPoint);
+        }
+      }
+
+      function setAutoWidth() {
+        // Here we want to open the RH column when a user clicks on a button
+        // get the page elements (same as drag funtion)
+        let page = document.getElementById("page");
+        let leftcolumn = document.getElementById("leftcolumn");
+        let rightcolumn = document.getElementById("rightcolumn");
+
+        // Set the size of the left and right cols by dividing up the page size - giving a little bit more room for the LH col
+        let leftColumnWidth = page.clientWidth * 0.55 - 4; // -4 allows room for drag bar
+        let rightColumnWidth = page.clientWidth * 0.45 - 4;
+
+        // below is copied from the drag function. We will need to stop this function on small screens when the preveiw is rendered below the form - but could be done differently
+        // set a min width for the left column so the layout doesn't go to total crap
+        if (leftColumnWidth < 375) {
+          return;
+        }
+
+        let dragbarWidth = 8;
+
+        // Below is the same as the drag function
+        let cols = [
+          leftColumnWidth,
+          dragbarWidth,
+          page.clientWidth - dragbarWidth - leftColumnWidth,
+        ];
+        let newColDefn = cols.map((c) => c.toString() + "px").join(" ");
+
+        console.log(newColDefn);
+        page.style.gridTemplateColumns = newColDefn;
+
+        // Still need to add classes as appropriate, like the drag function so the page renders correctly
+        // This is copied from drag, so could be separate function
+        if (leftColumnWidth > extraLargeBreakPoint) {
+          setBreakPoint("xl-breakpoint");
+        } else if (
+          leftColumnWidth > largeBreakPoint &&
+          leftColumnWidth <= extraLargeBreakPoint
+        ) {
+          setBreakPoint("lg-breakpoint");
+        } else if (
+          leftColumnWidth > mediumBreakPoint &&
+          leftColumnWidth <= largeBreakPoint
+        ) {
+          setBreakPoint("md-breakpoint");
+        } else if (
+          leftColumnWidth > smallBreakPoint &&
+          leftColumnWidth <= mediumBreakPoint
+        ) {
+          setBreakPoint("sm-breakpoint");
+        } else if (leftColumnWidth < smallBreakPoint) {
+          setBreakPoint("none");
+        }
+        // show drag label if the rol col widht is smaller than X
+        if (rightColumnWidth < 100) {
+          page.classList.add("preview-page-handle-visible");
+          // dragBarLabel.classList.add("preview-page-handle-visible");
+        } else if (page.classList.contains("preview-page-handle-visible")) {
+          page.classList.remove("preview-page-handle-visible");
+        }
+      }
+
+      function OnDrag(event) {
+        if (isLeftDragging || isRightDragging) {
+          console.log("Dragging");
+
+          let page = document.getElementById("page");
+          let leftcolumn = document.getElementById("leftcolumn");
+          let rightcolumn = document.getElementById("rightcolumn");
+
+          let leftColumnWidth = isLeftDragging
+            ? event.clientX
+            : leftcolumn.clientWidth;
+          let rightColumnWidth = isRightDragging
+            ? page.clientWidth - event.clientX
+            : rightcolumn.clientWidth;
+
+          // set a min width for the left column so the layout doesn't go to total crap
+          if (leftColumnWidth < 375) {
+            return;
+          }
+
+          let dragbarWidth = 8;
+
+          let cols = [
+            leftColumnWidth,
+            dragbarWidth,
+            page.clientWidth - dragbarWidth - leftColumnWidth,
+          ];
+
+          let newColDefn = cols.map((c) => c.toString() + "px").join(" ");
+
+          console.log(newColDefn);
+          page.style.gridTemplateColumns = newColDefn;
+
+          if (leftColumnWidth > extraLargeBreakPoint) {
+            setBreakPoint("xl-breakpoint");
+          } else if (
+            leftColumnWidth > largeBreakPoint &&
+            leftColumnWidth <= extraLargeBreakPoint
+          ) {
+            setBreakPoint("lg-breakpoint");
+          } else if (
+            leftColumnWidth > mediumBreakPoint &&
+            leftColumnWidth <= largeBreakPoint
+          ) {
+            setBreakPoint("md-breakpoint");
+          } else if (
+            leftColumnWidth > smallBreakPoint &&
+            leftColumnWidth <= mediumBreakPoint
+          ) {
+            setBreakPoint("sm-breakpoint");
+          } else if (leftColumnWidth < smallBreakPoint) {
+            setBreakPoint("none");
+          }
+
+          // show drag label if the rol col widht is smaller than X
+          if (rightColumnWidth < 100) {
+            page.classList.add("preview-page-handle-visible");
+            // dragBarLabel.classList.add("preview-page-handle-visible");
+          } else if (page.classList.contains("preview-page-handle-visible")) {
+            page.classList.remove("preview-page-handle-visible");
+          }
+
+          // add class to the RHS column if the width goes below the min width of the preview page so we can add styling
+          if (rightColumnWidth < 576) {
+            rightcolumn.classList.add("preview-page-overflow");
+          } else if (rightcolumn.classList.contains("preview-page-overflow")) {
+            rightcolumn.classList.remove("preview-page-overflow");
+          }
+
+          event.preventDefault();
+        }
+      }
+
+      window.addEventListener("resize", ResetColumnSizes);
+    </script>
+  </body>
+</html>
