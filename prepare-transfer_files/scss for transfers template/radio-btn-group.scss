@@ -1,0 +1,168 @@
+.radio-button-group {
+  font-size: 0;
+
+  input {
+    margin-right: $px;
+    .md-breakpoint &,
+    .lg-breakpoint & {
+      display: none;
+      &:checked + label {
+        background-color: $blue-75;
+        box-shadow: inset 0 $px/ 12 $px/ 8 rgba(0, 0, 0, 0.5);
+        color: $white;
+        text-shadow: 0 $px/ 12 $px/ 8 rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  label {
+    display: inline-block;
+    // label to look like buttons on larger screens
+    .md-breakpoint &,
+    .lg-breakpoint & {
+      // copied LUI button styles
+      font-family: "OpenSans Bold", system-ui, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 40px;
+      transition: background-color 0.3s, color 0.3s, height 0.3s, border 0.3s;
+      text-align: center;
+      border: 2px solid $blue-75;
+      color: $blue-75;
+      // end copy
+
+      display: inline-block;
+      border-radius: 0;
+      border-right: none;
+      width: 100%;
+      &:hover {
+        color: $white;
+        background: $blue-75;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#transfer-of-radio-group {
+  display: grid;
+  align-items: stretch;
+  // Have gone for a 24 col grid so the buttons can be spaced more evenly... have more control of spacing
+  grid-template-columns: repeat(24, 1fr);
+
+  .grid-cell-1 {
+    grid-column: span 24;
+  }
+  .grid-cell-2 {
+    grid-column: span 24;
+  }
+  .grid-cell-3 {
+    grid-column: span 24;
+  }
+  .grid-cell-4 {
+    grid-column: span 24;
+  }
+  // ----------------- med break point marker -------------------
+
+  .md-breakpoint & {
+    .grid-cell-1 {
+      grid-column: span 3;
+      label {
+        border-radius: $px/ 4 0 0 $px/ 4;
+      }
+    }
+    .grid-cell-2 {
+      grid-column: span 5;
+    }
+    .grid-cell-3 {
+      grid-column: span 8;
+    }
+    .grid-cell-4 {
+      grid-column: span 8;
+      label {
+        border-right: 2px solid $blue-75;
+        border-radius: 0 $px/ 4 $px/ 4 0;
+      }
+    }
+  }
+  // ----------------- lrg break point marker -------------------
+
+  .lg-breakpoint & {
+    .grid-cell-1 {
+      grid-column: 1 / 6;
+      label {
+        border-radius: $px/ 4 0 0 $px/ 4;
+      }
+    }
+    .grid-cell-2 {
+      grid-column: 6 / 11;
+    }
+    .grid-cell-3 {
+      grid-column: 11 / 16;
+    }
+    .grid-cell-4 {
+      grid-column: 16 / 21;
+      label {
+        border-right: 2px solid $blue-75;
+        border-radius: 0 $px/ 4 $px/ 4 0;
+      }
+    }
+  }
+}
+
+#transferee-radio-group {
+  display: grid;
+  align-items: stretch;
+  // Have gone for a 24 col grid so the buttons can be spaced more evenly... have more control of spacing
+  grid-template-columns: repeat(24, 1fr);
+
+  .grid-cell-1 {
+    grid-column: span 24;
+  }
+  .grid-cell-2 {
+    grid-column: span 24;
+  }
+  .grid-cell-3 {
+    grid-column: span 24;
+  }
+  // ----------------- med break point marker -------------------
+
+  .md-breakpoint & {
+    .grid-cell-1 {
+      grid-column: span 7;
+      label {
+        border-radius: $px/ 4 0 0 $px/ 4;
+      }
+    }
+    .grid-cell-2 {
+      grid-column: span 7;
+    }
+    .grid-cell-3 {
+      grid-column: span 7;
+      label {
+        border-right: 2px solid $blue-75;
+        border-radius: 0 $px/ 4 $px/ 4 0;
+      }
+    }
+  }
+  // ----------------- lrg break point marker -------------------
+
+  .lg-breakpoint & {
+    .grid-cell-1 {
+      grid-column: span 5;
+      label {
+        border-radius: $px/ 4 0 0 $px/ 4;
+      }
+    }
+    .grid-cell-2 {
+      grid-column: span 5;
+    }
+    .grid-cell-3 {
+      grid-column: span 5;
+      label {
+        border-right: 2px solid $blue-75;
+        border-radius: 0 $px/ 4 $px/ 4 0;
+      }
+    }
+  }
+}

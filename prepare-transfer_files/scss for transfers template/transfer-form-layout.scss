@@ -1,0 +1,316 @@
+// SECTIONS WITHIN THE PAGE
+section {
+  padding: $px $px $px * 3 $px;
+}
+// END SECTIONS
+
+// 12 COLUMN GRID FOR THE FORM ------------------------
+
+$myGridGap: $px * 0.5;
+$myGridGapSml: $px * 0.25;
+
+.form-grid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: $myGridGap;
+}
+
+// grid helpers -------------------------
+
+.grid-cell-fullwidth {
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+// end grid  ---------------------
+
+.prepare-form-section {
+  background-color: #fff;
+  // make the content scroll within the grid cell so columns scroll independently of each other
+  overflow: scroll;
+  transition: padding 0.3s ease-in-out;
+
+  // when the RHS col has it's label visible, add padding to the form so the label doesn't cover them
+  .preview-page-handle-visible & {
+    padding-right: $px * 3;
+  }
+}
+
+.affected-titles-list {
+  ul {
+    list-style: none;
+    margin: 0;
+    @include grid(3, ($px * 0.25));
+    .sm-breakpoint & {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .md-breakpoint & {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    .lg-breakpoint & {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+  li {
+    // display: inline-block;
+    // margin: 0 $unit-xs 0 0;
+
+    a {
+      border: 1px solid $grey-20;
+      border-radius: 3px;
+      padding: $unit-xxs $unit-sm;
+      text-decoration: none;
+      color: $grey-80;
+      width: 100%;
+      text-align: center;
+      &:hover {
+        background-color: $grey-10;
+      }
+      &:visited {
+        color: $grey-30;
+      }
+    }
+  }
+}
+
+#transferors-table,
+.transferees-grid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(40px, auto);
+  // Larger container grid settings are set separately below for individual tables
+  .header-row,
+  .transferors-row,
+  .transferees-row {
+    .md-breakpoint & {
+      .grid-cell {
+        padding-left: $px / 4;
+        padding-right: $px / 4;
+      }
+    }
+  }
+  .header-row {
+    display: none;
+    .md-breakpoint & {
+      display: contents;
+      .header-cell {
+        align-items: center;
+        display: flex;
+        h6 {
+          margin: 0;
+          color: $grey-80;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .transferors-row,
+  .transferees-row {
+    padding: $px / 2;
+    border-radius: 3px;
+    border: 1px solid $grey-20;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: $px;
+    h6,
+    .grid-cell > label {
+      margin-top: $unit-xs;
+    }
+    p {
+      margin-top: 0;
+    }
+    .md-breakpoint & {
+      box-shadow: none;
+      display: contents; // allow the grid to flow through to the cells, so we set the row to 'invisible' - look it up
+      border: none;
+
+      h6,
+      .grid-cell > label {
+        // only target labels directly under the grid-cell divs so check box labels will still show
+        display: none;
+      }
+      p,
+      .lui-checkbox-container {
+        margin-top: $px / 4;
+      }
+      .grid-cell-corporate-check {
+        grid-column: 2 / 4;
+        background: $grey-10;
+      }
+      .grid-cell-fullwidth {
+        grid-column-end: 7;
+      }
+    }
+  }
+}
+
+#transferors-table {
+  .md-breakpoint & {
+    .header-cell {
+      border-top: 1px solid $grey-30;
+    }
+  }
+  .md-breakpoint & {
+    grid-template-columns: 2fr 2fr 1fr;
+    .grid-cell {
+      border-top: 1px solid $grey-20;
+      border-radius: 0;
+    }
+    // add bottom border to the last row
+    &:last-child {
+      .grid-cell {
+        border-bottom: 1px solid $grey-20;
+      }
+    }
+  }
+}
+
+.transferees-grid {
+  .md-breakpoint & {
+    grid-template-columns: 24px 3fr 3fr 2fr 1fr 48px;
+  }
+}
+.transferors-content,
+.transferees-content {
+  display: contents;
+}
+
+.transferees-row {
+  .md-breakpoint & {
+    .grid-cell {
+      // set the grid cells to flex on larger break point so content is vertically centered
+      display: flex;
+      align-items: center;
+      padding-top: $px * 0.25;
+      padding-bottom: $px * 0.25;
+    }
+    &:hover {
+      // don't apply to all grid-cells, just the first layer down
+      > .grid-cell {
+        background-color: $blue-05;
+      }
+      > .icon-drag {
+        opacity: 1;
+      }
+    }
+  }
+  .material-icons {
+    color: $blue-75;
+  }
+  .icon-drag {
+    opacity: 0;
+    &:hover {
+      cursor: grab;
+    }
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+.add-transferees-row {
+  text-align: right;
+  margin: $unit-sm 0 0 0;
+  border-top: 1px solid $grey-20;
+  a {
+    display: inline-block;
+    margin: 0 $myGridGap * 0.5;
+  }
+}
+
+.transferees-row-corporateName {
+  grid-column: 2 / 4;
+  input {
+    max-width: none !important;
+  }
+}
+
+.transferees-row-corporateCheck {
+  grid-column: 4 / 5;
+}
+
+.resulting-ownership-panel-wrapper {
+  background-color: $blue-05;
+}
+
+.transferees-row-corporateCheck {
+  .md-breakpoint & {
+    .lui-checkbox-container label {
+      margin-left: $unit-xxs;
+    }
+  }
+  .lg-breakpoint & {
+    .lui-checkbox-container label {
+      margin-left: $unit-sm;
+    }
+  }
+}
+
+// show or hide shortened for full length headings/text
+.label-full-length {
+  display: none;
+  .lg-breakpoint & {
+    display: inline-block;
+  }
+}
+.label-shortened {
+  .lg-breakpoint & {
+    display: none;
+  }
+}
+// -------------- end
+
+.mortgageGroup {
+  border: 1px solid $grey-80;
+  padding: $unit-xs 0;
+  // create space above for group header tab
+  margin-top: $unit-md;
+  position: relative;
+  &--header {
+    position: absolute;
+    top: $unit-md * -1;
+    left: -1px;
+    background-color: $grey-80;
+    border-radius: $borderRadius $borderRadius 0 0;
+    color: $white;
+    line-height: $unit-md;
+    font-size: $row-font-size;
+    padding: 0 $unit-sm 0 $unit-sm * 2;
+    margin: 0;
+    &:hover {
+      background-color: $icon-hover;
+      cursor: grab;
+      .groupIconDrag {
+        opacity: 1;
+      }
+    }
+  }
+  .groupIconDrag {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    opacity: 0.1;
+    color: $white;
+    position: absolute;
+    left: 2px;
+    top: 4px;
+  }
+}
+.helpIcon {
+  color: $info;
+}
+.buttonGroupWrapper {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  float: right;
+}
+
+// RESULTING OWNERSHIP PANEL
+.resulting-ownership-panel {
+  background-color: $white;
+  margin-top: $unit-sm;
+  padding: $px;
+  border-radius: $borderRadius;
+  h3 {
+    margin: 0;
+  }
+}

@@ -1,0 +1,57 @@
+// VARIABLES
+//
+//
+
+$grey-80: #414042;
+$grey-60: #55504b;
+$grey-30: #989189;
+$grey-20: #beb9b4;
+$grey-10: #eaeaea;
+$grey-05: #f9f9f9;
+
+$blue-100: #00425d;
+// $blue-85: #005b80;
+$blue-75: #007198;
+$blue-50: #0096cc;
+$blue-25: #73c8e1;
+$blue-05: #e2f3f7;
+
+$teal-100: #004b50;
+$teal-75: #017a76;
+$teal-50: #00a599;
+$teal-25: #73cdc8;
+$teal-05: #dcf5f0;
+
+$green-100: #004e32;
+$green-75: #08814d;
+$green-50: #0aa245;
+$green-25: #9bd79b;
+$green-05: #e9fae7;
+
+$white: #fff;
+$info: #3a7cdf;
+
+$brand-primary: $blue-100;
+$brand-secondary: $teal-75;
+
+$main-border-colour: #d4d1cd;
+$primary-blue: #00425d;
+$linz-blue: #007198;
+$zebra: #f5f5f5; // transparent
+$number-bg-colour: #f9f9f9;
+$number-bg-colour-zebra: darken($number-bg-colour, 5%);
+$icon-default: lighten(#989189, 25%);
+
+$icon-hover: #007198;
+$row-parent-hover-colour: lighten(#e2f3f7, 5%);
+$row-hover-colour: #e2f3f7;
+$row-number-hover-colour: darken(#e2f3f7, 5%);
+
+$row-cell-padding-vertical: 0.5rem;
+$row-cell-padding-horizontal: 0.25rem;
+
+$row-font-size: 14px;
+$row-input-line-height: 32px;
+$px: 24px;
+
+$media-break-tablet: 768px;

@@ -1,0 +1,9 @@
+// Add a simple repeating grid to your component. This is the base definition. You can then change your
+// grid columnns etc under break points to change your grid on larger screens.
+
+@mixin grid($columns, $gap: $px, $alignment: stretch) {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(#{$columns}, 1fr);
+  grid-gap: $gap;
+}

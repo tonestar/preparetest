@@ -1,0 +1,52 @@
+// ********************************************************************************************
+//         header
+// ********************************************************************************************
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: ($px * 2) 1fr auto;
+  background-color: $blue-05;
+  padding: $px/4 0;
+  .grid-cell {
+    display: flex;
+    align-items: center;
+    padding: 0 $px / 2;
+    &:nth-child(2) {
+      border-left: 1px solid $blue-50;
+      border-right: 1px solid $blue-50;
+    }
+  }
+  .back-btn {
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: $blue-50;
+      cursor: pointer;
+      .material-icons {
+        color: $white;
+      }
+    }
+  }
+  .material-icons {
+    color: $blue-75;
+    transition: color 0.2s ease-in-out;
+  }
+  h1 {
+    font-size: $px * 0.75;
+    font-family: "OpenSans SemiBold", system-ui, sans-serif;
+    margin: 0;
+    span {
+      display: block;
+      font-size: 14px;
+      color: $grey-80;
+    }
+  }
+  .header-client-ref p {
+    span {
+      font-family: "OpenSans semibold", system-ui, sans-serif;
+    }
+    font-family: "OpenSans regular", system-ui, sans-serif;
+    font-size: 14px;
+    margin: 0;
+  }
+}

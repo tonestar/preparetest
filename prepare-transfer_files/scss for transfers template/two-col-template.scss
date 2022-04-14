@@ -1,0 +1,14 @@
+// ********************************************************************************************
+//         Two column work
+// ********************************************************************************************
+
+.two-col-adjustable-grid {
+  // initially the adjustable grid is a single column version for mobile
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 1fr;
+  // introduce adjustable layout on larger screens with multiple columns
+  @media only screen and (min-width: $media-break-tablet) {
+    grid-template-columns: 2fr 8px 1fr;
+  }
+}

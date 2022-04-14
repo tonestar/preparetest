@@ -1,0 +1,545 @@
+//variables for this component
+$groupBackground: $grey-05;
+$rowHoverColor: $blue-05;
+
+// Needs to be a LUI thing, the icon colour
+.material-icons {
+  color: $blue-75;
+}
+
+// SECTIONS WITHIN THE PAGE
+section {
+  padding: $px $px $px * 3 $px;
+  overflow: scroll;
+}
+// END SECTIONS
+
+// 12 COLUMN GRID FOR THE FORM ------------------------
+
+$myGridGap: $px * 0.5;
+$myGridGapSml: $px * 0.25;
+
+.FormGrid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: $myGridGap;
+}
+
+// grid helpers -------------------------
+
+.FormGridCell-fullwidth {
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+// end grid  ---------------------
+
+.prepare-form-section {
+  background-color: #fff;
+  // make the content scroll within the grid cell so columns scroll independently of each other
+  overflow: scroll;
+  transition: padding 0.3s ease-in-out;
+
+  // when the RHS col has it's label visible, add padding to the form so the label doesn't cover them
+  .preview-page-handle-visible & {
+    padding-right: $px * 3;
+  }
+}
+// ---------------------------------------------------------------------------------------------------
+// ----------------------------------- TRANSFEREES CLIENT LIST ---------------------------------------
+// ---------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------
+
+.TransfereesGrid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: $px * 1.5 1fr $px;
+  grid-auto-rows: minmax(24px, auto);
+  .breakpoint-md & {
+    grid-template-columns: $px 3fr 3fr 2fr 1fr $px * 2;
+  }
+}
+
+.TransfereesGridCell {
+  grid-column: 2/3;
+  &-IconDrag {
+    grid-column: 1/2;
+  }
+  &-Menu {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+  position: relative; // set position in case any content needs to be absolute positioned
+  .breakpoint-md & {
+    // Reset the css that moves the cells around for mobile, so we get a standard row
+    grid-column: auto;
+    grid-row: auto;
+    &-IconDrag,
+    &-Menu {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+}
+
+.TransfereesClientsList-fullwidth {
+  grid-column-end: 7;
+}
+
+// CLIENT LIST GRID AND ROWS STYLING ------------------------------------------
+.TransfereesHeader-row {
+  display: none;
+  .breakpoint-md & {
+    // due to the header row being hidden in mobile, we need to set display grid here, even though it's defined in the TranfereesGrid class as well...
+    display: grid;
+  }
+}
+.TransfereesHeader-cell {
+  align-items: center;
+  display: flex;
+  h6 {
+    margin: 0;
+    color: $grey-80;
+    font-size: 14px;
+  }
+}
+.TransfereesHeader-HelpBtn {
+  position: absolute;
+  left: $px * 2;
+}
+
+.TransfereesGridCell {
+  padding: $px / 4;
+}
+.TransfereesClientsList-row {
+  // Tile styling for mobile
+  border-radius: 3px;
+  border: 1px solid $grey-20;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: $px;
+  padding: $unit-sm $unit-xs;
+  h6,
+  .TransfereesGridCell > label {
+    margin-top: $unit-xs;
+  }
+  p {
+    margin-top: 0;
+  }
+  // Reduce the height of the inputs for a more compact view
+  input:not([type="checkbox"]):not([type="radio"]) {
+    line-height: $px;
+    min-height: $unit-md;
+  }
+  .breakpoint-md & {
+    // row styling for larger screens
+    box-shadow: none;
+    margin: 0;
+    border: none;
+    padding: 0;
+    .TransfereesGridCell {
+      // set the grid cells to flex on larger break point so content is vertically centered
+      display: flex;
+      align-items: center;
+      padding: $px / 4;
+    }
+    &:hover {
+      // don't apply to all TransfereesGridCells, just the first layer down
+      > .TransfereesGridCell {
+        background-color: $rowHoverColor;
+      }
+      > .TransfereesGridCell-IconDrag {
+        span {
+          opacity: 1;
+        }
+      }
+    }
+
+    h6,
+    .TransfereesGridCell > label {
+      // only target labels directly under the TransfereesGridCell divs so check box labels will still show
+      display: none;
+    }
+    p,
+    .lui-checkbox-container {
+      margin-top: $px / 4;
+    }
+
+    .TransfereesGridCell-IconDrag {
+      span {
+        opacity: 0;
+      }
+      &:hover {
+        cursor: grab;
+      }
+      &:active {
+        cursor: grabbing;
+      }
+    }
+  }
+}
+
+.TransfereesClientsList--listActionBtns {
+  text-align: right;
+  margin: $unit-sm 0 0 0;
+  border-top: 1px solid $grey-20;
+  a {
+    display: inline-block;
+    margin: 0 $myGridGap * 0.5;
+  }
+}
+
+// CORPORATE ROW STYLING ----------------------------------------------
+.TransfereesCorporateName-Cell {
+  .breakpoint-md & {
+    grid-column: 2 / 4;
+    input {
+      max-width: none !important;
+    }
+  }
+}
+
+.TransfereesCorporateCheck-Cell {
+  .breakpoint-md & {
+    grid-column: 4 / 5;
+    .lui-checkbox-container label {
+      margin-left: $unit-xxs;
+    }
+  }
+  .breakpoint-lg & {
+    .lui-checkbox-container label {
+      margin-left: $unit-sm;
+    }
+  }
+}
+
+// GROUPING ROWS STYLING ----------------------------------------------
+.TransfereesClientGroup {
+  border: 1px solid $grey-80;
+  // create space above for group header tab
+  padding-top: $unit-md;
+  position: relative;
+  background-color: $groupBackground;
+  &--header {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    background-color: $grey-80;
+    border-radius: $borderRadius $borderRadius 0 0;
+    color: $white;
+    line-height: $unit-md;
+    padding: 0 $unit-sm 0 $unit-sm * 2;
+    margin: 0;
+    &:hover {
+      background-color: $icon-hover;
+      cursor: grab;
+      .TransfereesClientGroup-IconDrag {
+        opacity: 1;
+      }
+    }
+  }
+  li .TransfereesGridCell {
+    background-color: $groupBackground;
+  }
+  .TransfereesClientGroup-IconDrag {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    opacity: 0.25;
+    color: $white;
+    position: absolute;
+    left: 2px;
+    top: $unit-xxs;
+  }
+}
+
+// END GROUPING ROWS STYLING ----------------------------------------------
+
+// show or hide shortened for full length headings/text
+.label-full-length {
+  display: none;
+  .lg-breakpoint & {
+    display: inline-block;
+  }
+}
+.label-shortened {
+  .lg-breakpoint & {
+    display: none;
+  }
+}
+// -------------- ICONS ------------------------------------------
+
+.helpIcon {
+  color: $info;
+}
+.TransfereesBtnGroupWrapper {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  float: right;
+}
+.TransfereesGridCell-IconDrag,
+.TransfereesGridCell-Menu {
+  padding-top: $unit-xs;
+  .breakpoint-md & {
+    padding-top: 0;
+  }
+}
+
+// RESULTING OWNERSHIP PANEL ----------------------------------------------
+.ResultingOwnershipPanel-wrapper {
+  background-color: $grey-05;
+}
+.ResultingOwnershipPanel {
+  margin-top: $unit-sm;
+  padding: $px;
+  border-radius: $borderRadius;
+  h5 {
+    margin: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------
+// ----------------------------------- MORTGAGEES CLIENT LIST ----------------------------------------
+// ---------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------
+
+.MortgageesGrid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: $px * 1.5 1fr $px;
+  grid-auto-rows: minmax(24px, auto);
+  .breakpoint-md & {
+    grid-template-columns: $px 3fr 1fr $px * 2;
+  }
+}
+
+.MortgageesGridCell {
+  grid-column: 2/3;
+  &-IconDrag {
+    grid-column: 1/2;
+  }
+  &-Menu {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+  position: relative; // set position in case any content needs to be absolute positioned
+  .breakpoint-md & {
+    // Reset the css that moves the cells around for mobile, so we get a standard row
+    grid-column: auto;
+    grid-row: auto;
+    &-IconDrag,
+    &-Menu {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+}
+
+.MortgageesGridCell-fullwidth {
+  grid-column-end: 5;
+}
+
+// CLIENT LIST GRID AND ROWS STYLING ------------------------------------------
+
+.MortgageesHeader-row {
+  display: none;
+  .breakpoint-md & {
+    // due to the header row being hidden in mobile, we need to set display grid here, even though it's defined in the TranfereesGrid class as well...
+    display: grid;
+  }
+}
+.MortgageesHeader-cell {
+  align-items: center;
+  display: flex;
+  h6 {
+    margin: 0;
+    color: $grey-80;
+    font-size: 14px;
+  }
+}
+.MortgageesHeader-HelpBtn {
+  position: absolute;
+  left: $px * 2;
+}
+.MortgageesGridCell {
+  padding: $px / 4;
+}
+.MortgageesClientsList-row {
+  // Tile styling for mobile
+  border-radius: 3px;
+  border: 1px solid $grey-20;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: $px;
+  padding: $unit-sm $unit-xs;
+  h6,
+  .MortgageesGridCell > label {
+    margin-top: $unit-xs;
+  }
+  p {
+    margin-top: 0;
+  }
+  // Reduce the height of the inputs for a more compact view
+  input:not([type="checkbox"]):not([type="radio"]) {
+    line-height: $px;
+    min-height: $unit-md;
+  }
+  .breakpoint-md & {
+    // row styling for larger screens
+    box-shadow: none;
+    margin: 0;
+    border: none;
+    padding: 0;
+    .MortgageesGridCell {
+      // set the grid cells to flex on larger break point so content is vertically centered
+      display: flex;
+      align-items: center;
+      padding: $px / 4;
+    }
+    &:hover {
+      // don't apply to all MortgageesGridCells, just the first layer down
+      > .MortgageesGridCell {
+        background-color: $rowHoverColor;
+      }
+      > .MortgageesGridCell-IconDrag {
+        span {
+          opacity: 1;
+        }
+      }
+    }
+
+    h6,
+    .MortgageesGridCell > label {
+      // only target labels directly under the MortgageesGridCell divs so check box labels will still show
+      display: none;
+    }
+    p,
+    .lui-checkbox-container {
+      margin-top: $px / 4;
+    }
+
+    .MortgageesGridCell-IconDrag {
+      span {
+        opacity: 0;
+      }
+      &:hover {
+        cursor: grab;
+      }
+      &:active {
+        cursor: grabbing;
+      }
+    }
+  }
+}
+
+.MortgageesClientsList--listActionBtns {
+  text-align: right;
+  margin: $unit-sm 0 0 0;
+  border-top: 1px solid $grey-20;
+  a {
+    display: inline-block;
+    margin: 0 $myGridGap * 0.5;
+  }
+}
+
+// CORPORATE ROW STYLING ----------------------------------------------
+.MortgageesClientsList-RowCorporateName {
+  grid-column: 2 / 4;
+  input {
+    max-width: none !important;
+  }
+}
+
+.MortgageesClientsList-RowCorporateCheck {
+  grid-column: 4 / 5;
+  .breakpoint-md & {
+    .lui-checkbox-container label {
+      margin-left: $unit-xxs;
+    }
+  }
+  .lg-breakpoint & {
+    .lui-checkbox-container label {
+      margin-left: $unit-sm;
+    }
+  }
+}
+
+// GROUPING ROWS STYLING ----------------------------------------------
+.MortgageesClientGroup {
+  border: 1px solid $grey-80;
+  // create space above for group header tab
+  padding-top: $unit-md;
+  position: relative;
+  background-color: $groupBackground;
+  &--header {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    background-color: $grey-80;
+    border-radius: $borderRadius $borderRadius 0 0;
+    color: $white;
+    line-height: $unit-md;
+    font-size: $row-font-size;
+    padding: 0 $unit-sm 0 $unit-sm * 2;
+    margin: 0;
+    &:hover {
+      background-color: $icon-hover;
+      cursor: grab;
+      .MortgageesClientGroup-IconDrag {
+        opacity: 1;
+      }
+    }
+  }
+  li .MortgageesGridCell {
+    background-color: $groupBackground;
+  }
+  .MortgageesClientGroup-IconDrag {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    opacity: 0.25;
+    color: $white;
+    position: absolute;
+    left: 2px;
+    top: $unit-xxs;
+  }
+}
+
+// END GROUPING ROWS STYLING ----------------------------------------------
+
+// show or hide shortened for full length headings/text
+.label-full-length {
+  display: none;
+  .lg-breakpoint & {
+    display: inline-block;
+  }
+}
+.label-shortened {
+  .lg-breakpoint & {
+    display: none;
+  }
+}
+// -------------- ICONS ------------------------------------------
+
+.helpIcon {
+  color: $info;
+}
+
+.MortgageesGridCell-IconDrag,
+.MortgageesGridCell-Menu {
+  padding-top: $unit-xs;
+  .breakpoint-md & {
+    padding-top: 0;
+  }
+}
+
+// RESULTING OWNERSHIP PANEL ----------------------------------------------
+.ResultingOwnershipPanel-wrapper {
+  background-color: $grey-05;
+}
+.ResultingOwnershipPanel {
+  margin-top: $unit-sm;
+  padding: $px;
+  border-radius: $borderRadius;
+  h5 {
+    margin: 0;
+  }
+}

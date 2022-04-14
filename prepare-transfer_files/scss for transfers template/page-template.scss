@@ -1,0 +1,22 @@
+// ********************************************************************************************
+//         Two column work
+// ********************************************************************************************
+
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "messageBanner"
+    "main"
+    "footer";
+  @media only screen and (min-width: $media-break-tablet) {
+    height: 100vh;
+  }
+}
+
+.app-cotent {
+  grid-area: main;
+  overflow: hidden;
+}

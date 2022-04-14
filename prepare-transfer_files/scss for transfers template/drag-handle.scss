@@ -1,0 +1,54 @@
+.drag-bar {
+  display: none;
+  // introduce adjustable layout on larger screens
+  @media only screen and (min-width: 768px) {
+    display: block;
+    background-color: $grey-10;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      cursor: ew-resize;
+      background-color: $blue-25;
+      .preview-page-handle {
+        background-color: $blue-25;
+      }
+    }
+  }
+  .material-icons {
+    position: absolute;
+    transform: rotate(90deg);
+    left: -8px;
+    top: 50%;
+    background-color: transparent;
+  }
+}
+
+.preview-page-handle {
+  // display: none;
+  overflow: hidden;
+  position: absolute;
+  // height: 0;
+  z-index: 1;
+  width: $px * 10;
+  height: 40px;
+  display: flex;
+  background-color: $grey-10;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: ($px * 10) / -2 - 15px;
+
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transform: translateX(43px) rotate(90deg);
+  p {
+    margin: 0;
+  }
+  .preview-page-handle-visible & {
+    transform: translateX(-5px) rotate(90deg);
+    &:hover {
+      cursor: ew-resize;
+      background: $blue-25;
+    }
+  }
+}
